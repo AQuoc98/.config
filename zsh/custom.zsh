@@ -8,7 +8,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Starship
-export STARSHIP_CONFIG="$HOME/dotfiles/starship/starship.toml"
+export STARSHIP_CONFIG="$HOME/.config/starship.toml"
 eval "$(starship init zsh)"
 
 # fzf
