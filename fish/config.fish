@@ -27,6 +27,9 @@ set -gx PATH ~/.local/bin $PATH
 eval (/opt/homebrew/bin/brew shellenv)
 set -gx HOMEBREW_NO_AUTO_UPDATE 1
 
+# NVM
+set --universal nvm_default_version latest
+
 switch (uname)
     case Darwin
         source (dirname (status --current-filename))/config-osx.fish
