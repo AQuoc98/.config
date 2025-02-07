@@ -187,6 +187,7 @@
   - `<leader>d`, `<leader>c`, `<leader>p`: save and get from new yarn
   - `<leader>r`: replace hex color to hsl
   - `z+some-key`: fold code
+  - `<leader>m`: start multiple cursor mode
   - Tab
     - `te`: open new tab
     - `<Tab>`: tab next
