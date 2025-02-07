@@ -30,6 +30,12 @@ set -gx HOMEBREW_NO_AUTO_UPDATE 1
 # NVM
 set --universal nvm_default_version latest
 
+# Flutter
+set -gx PATH ~/development/flutter/bin/ $PATH
+
+# Ruby version manager rbenv
+eval "$(rbenv init -)"
+
 switch (uname)
     case Darwin
         source (dirname (status --current-filename))/config-osx.fish
