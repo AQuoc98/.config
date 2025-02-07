@@ -60,6 +60,7 @@
 
 ### Shell
 
+- Fish reload config: `source path-to-config.fish`
 - List: `ls`, `la`, `ll`, `lla`
 - Git: `g`
 - Nvim: `v`
@@ -68,11 +69,10 @@
   - `<C-f>`: fzf change directory
   - `<C-o>`: open fzf
   - `<C-r>`: history command
+  - `history clear`: clear search history
 - [Z usage](https://github.com/jethrokuan/z/blob/master/man/man1/z.md)
 
 ### Terminal - zsh
-
-# Terminal Command
 
 - [Cheat Sheet](https://github.com/0nn0/terminal-mac-cheatsheet)
 - List: `ls`, `ll`
@@ -226,11 +226,5 @@
 - Git
   - `<leader>gb`: open blame window
   - `<leader>go`: open file/folder in git repo
+  - `<leader>lg`: open lazygit
 - Zen mode: `<leader>z`
-
-TODO
-
-- Clean and integrate config in old dotfile to new dotfile
-- Update document
-- Run flutter
-- Test comment code
