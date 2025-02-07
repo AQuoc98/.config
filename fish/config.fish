@@ -33,6 +33,9 @@ set --universal nvm_default_version latest
 # Flutter
 set -gx PATH ~/development/flutter/bin/ $PATH
 
+# Dart
+set -gx PATH /Users/quocanh/development/flutter/bin/dart $PATH
+
 # Ruby version manager rbenv
 eval "$(rbenv init -)"
 
