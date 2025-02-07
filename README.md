@@ -186,6 +186,7 @@
   - `<C-m>`, `<C-o>`, or use `[` , `]`: move backwards/forwards (jump list)
   - `<leader>d`, `<leader>c`, `<leader>p`: save and get from new yarn
   - `<leader>r`: replace hex color to hsl
+  - `z+some-key`: fold code
   - Tab
     - `te`: open new tab
     - `<Tab>`: tab next
