@@ -56,6 +56,12 @@ return {
         build = "make",
       },
       "nvim-telescope/telescope-file-browser.nvim",
+      {
+        "nvim-telescope/telescope-live-grep-args.nvim",
+        -- This will not install any breaking changes.
+        -- For major updates, this must be adjusted manually.
+        version = "^1.0.0",
+      },
     },
     keys = {
       {
@@ -78,15 +84,24 @@ return {
         end,
         desc = "Lists files in your current working directory, respects .gitignore",
       },
+      -- {
+      --   ";r",
+      --   function()
+      --     local builtin = require("telescope.builtin")
+      --     builtin.live_grep({
+      --       additional_args = { "--hidden" },
+      --     })
+      --   end,
+      --   desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
+      -- },
       {
         ";r",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.live_grep({
-            additional_args = { "--hidden" },
-          })
+          local telescope = require("telescope")
+
+          telescope.extensions.live_grep_args.live_grep_args()
         end,
-        desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
+        desc = "Search with args",
       },
       {
         "\\\\",
@@ -208,6 +223,7 @@ return {
       telescope.setup(opts)
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
+      require("telescope").load_extension("live_grep_args")
     end,
   },
 
