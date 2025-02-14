@@ -12,6 +12,7 @@ return {
         "tailwindcss-language-server",
         "typescript-language-server",
         "css-lsp",
+        "ast-grep",
       })
     end,
   },
@@ -24,6 +25,7 @@ return {
       ---@type lspconfig.options
       servers = {
         cssls = {},
+        dartls = {},
         tailwindcss = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
@@ -154,18 +156,16 @@ return {
             return
           end
 
-          -- Đảm bảo result luôn là danh sách
+          -- Ensure result is alway list
           if not vim.tbl_islist(result) then
             result = { result }
           end
 
-          -- Nếu có nhiều kết quả → Dùng Telescope
           if #result > 1 then
             require("telescope.builtin").lsp_definitions()
             return
           end
 
-          -- Nếu chỉ có một kết quả → Mở trực tiếp
           local location = result[1]
           local uri = location.uri or location.targetUri
           if not uri then
@@ -195,7 +195,7 @@ return {
           function()
             go_to_location("textDocument/definition")
           end,
-          desc = "Goto Definition",
+          desc = "Go to definition",
           has = "definition",
         },
         {
@@ -203,7 +203,7 @@ return {
           function()
             go_to_location("textDocument/declaration")
           end,
-          desc = "Goto Declaration",
+          desc = "Go to declaration",
           has = "declaration",
         },
         {
@@ -211,7 +211,7 @@ return {
           function()
             go_to_location("textDocument/implementation")
           end,
-          desc = "Goto Implementation",
+          desc = "Go to implementation",
           has = "implementation",
         },
         {
@@ -219,7 +219,7 @@ return {
           function()
             go_to_location("textDocument/typeDefinition")
           end,
-          desc = "Goto Type Definition",
+          desc = "Goto type definition",
           has = "typeDefinition",
         },
       })

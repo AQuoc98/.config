@@ -1,16 +1,25 @@
 return {
+  -- Refactoring tool
   {
-    enabled = false,
-    "folke/flash.nvim",
-    ---@type Flash.Config
-    opts = {
-      search = {
-        forward = true,
-        multi_window = false,
-        wrap = false,
-        incremental = true,
+    "ThePrimeagen/refactoring.nvim",
+    keys = {
+      {
+        "<leader>r",
+        function()
+          require("refactoring").select_refactor()
+        end,
+        mode = "v",
+        noremap = true,
+        silent = true,
+        expr = false,
       },
     },
+    opts = {},
+  },
+
+  {
+    "folke/flash.nvim",
+    enabled = false,
   },
 
   {
@@ -165,8 +174,17 @@ return {
         end,
         desc = "Open File Browser with the path of the current buffer",
       },
+      {
+        ";F",
+        function()
+          local telescope = require("telescope")
+
+          telescope.extensions.flutter.commands()
+        end,
+        desc = "Show command flutter",
+      },
     },
-    config = function(_, opts)
+    opts = function(_, opts)
       local telescope = require("telescope")
       local actions = require("telescope.actions")
       local fb_actions = require("telescope").extensions.file_browser.actions
@@ -224,23 +242,8 @@ return {
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
       require("telescope").load_extension("live_grep_args")
+      require("telescope").load_extension("flutter")
     end,
-  },
-
-  {
-    "saghen/blink.cmp",
-    opts = {
-      completion = {
-        menu = {
-          winblend = vim.o.pumblend,
-        },
-      },
-      signature = {
-        window = {
-          winblend = vim.o.pumblend,
-        },
-      },
-    },
   },
 
   {
@@ -278,6 +281,20 @@ return {
   },
 
   {
+    "ibhagwan/fzf-lua",
+    cmd = "FzfLua",
+    opts = function(_, opts)
+      return {
+        lsp = {
+          code_actions = {
+            previewer = false,
+          },
+        },
+      }
+    end,
+  },
+
+  {
     "smoka7/multicursors.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -291,6 +308,20 @@ return {
         "<Leader>m",
         "<cmd>MCstart<cr>",
         desc = "Create a selection for selected text or word under the cursor",
+      },
+    },
+  },
+
+  {
+    "akinsho/flutter-tools.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- Optional for UI enhancements
+    },
+    opts = {
+      flutter_path = "/Users/quocanh/development/flutter/bin/flutter", -- <-- this takes priority over the lookup
+      closing_tag = {
+        prefix = ">",
       },
     },
   },

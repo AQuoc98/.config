@@ -1,66 +1,47 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
+local with_desc = require("util/fns").with_desc
 
 -- Do things without affecting the registers
-keymap.set("n", "x", '"_x')
-keymap.set("n", "<Leader>p", '"0p')
-keymap.set("n", "<Leader>P", '"0P')
-keymap.set("v", "<Leader>p", '"0p')
-keymap.set("n", "<Leader>c", '"_c')
-keymap.set("n", "<Leader>C", '"_C')
-keymap.set("v", "<Leader>c", '"_c')
-keymap.set("v", "<Leader>C", '"_C')
-keymap.set("n", "<Leader>d", '"_d')
-keymap.set("n", "<Leader>D", '"_D')
-keymap.set("v", "<Leader>d", '"_d')
-keymap.set("v", "<Leader>D", '"_D')
+keymap.set("n", "x", '"_x', { desc = "delete character not yank" })
+keymap.set("n", "<Leader>p", '"0p', { desc = "copy from other registers" })
+keymap.set("n", "<Leader>P", '"0P', { desc = "copy from other registers" })
+keymap.set("v", "<Leader>p", '"0p', { desc = "copy from other registers" })
+keymap.set("n", "<Leader>c", '"_c', { desc = "change character not yank" })
+keymap.set("n", "<Leader>C", '"_C', { desc = "change character not yank" })
+keymap.set("v", "<Leader>c", '"_c', { desc = "change character not yank" })
+keymap.set("v", "<Leader>C", '"_C', { desc = "change character not yank" })
+keymap.set("n", "<Leader>d", '"_d', { desc = "delete character not yank" })
+keymap.set("n", "<Leader>D", '"_D', { desc = "delete character not yank" })
+keymap.set("v", "<Leader>d", '"_d', { desc = "delete character not yank" })
+keymap.set("v", "<Leader>D", '"_D', { desc = "delete character not yank" })
 
--- Quit insert mode
-keymap.set("i", "jk", "<ESC>", opts)
-
--- Increment/decrement
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
-
--- Delete a word backwards
-keymap.set("n", "dw", 'vb"_d')
-
--- Select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
-
--- Jumplist
-keymap.set("n", "<C-m>", "<C-i>", opts)
-
--- New tab
-keymap.set("n", "te", ":tabedit %")
-keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
-
--- Split window
-keymap.set("n", "ss", ":split<Return>", opts)
-keymap.set("n", "sv", ":vsplit<Return>", opts)
-
--- Move window
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sl", "<C-w>l")
-
--- Resize window
-keymap.set("n", "<C-w><left>", "<C-w><")
-keymap.set("n", "<C-w><right>", "<C-w>>")
-keymap.set("n", "<C-w><up>", "<C-w>+")
-keymap.set("n", "<C-w><down>", "<C-w>-")
-
--- Diagnostics
+-- Others
+keymap.set("i", "jk", "<ESC>", with_desc(opts, "exit insert mode"))
+keymap.set("n", "+", "<C-a>", { desc = "increment" })
+keymap.set("n", "-", "<C-x>", { desc = "decrement" })
+keymap.set("n", "dw", 'vb"_d', { desc = "delete a word backwards" })
+keymap.set("n", "<C-a>", "gg<S-v>G", with_desc(opts, "select all"))
+keymap.set("n", "<C-m>", "<C-i>", with_desc(opts, "jump list"))
+keymap.set("n", "te", ":tabedit %", { desc = "open new tab" })
+keymap.set("n", "<tab>", ":tabnext<Return>", with_desc(opts, "tab next"))
+keymap.set("n", "<s-tab>", ":tabprev<Return>", with_desc(opts, "tab previous"))
+keymap.set("n", "ss", ":split<Return>", with_desc(opts, "horizontal split"))
+keymap.set("n", "sv", ":vsplit<Return>", with_desc(opts, "vertical split"))
+keymap.set("n", "sh", "<C-w>h", { desc = "move window" })
+keymap.set("n", "sk", "<C-w>k", { desc = "move window" })
+keymap.set("n", "sj", "<C-w>j", { desc = "move window" })
+keymap.set("n", "sl", "<C-w>l", { desc = "move window" })
+keymap.set("n", "<C-w><left>", "<C-w><", { desc = "resize window" })
+keymap.set("n", "<C-w><right>", "<C-w>>", { desc = "resize window" })
+keymap.set("n", "<C-w><up>", "<C-w>+", { desc = "resize window" })
+keymap.set("n", "<C-w><down>", "<C-w>-", { desc = "resize window" })
 keymap.set("n", "<C-j>", function()
   vim.diagnostic.goto_next()
-end, opts)
-
+end, with_desc(opts, "go to next diagnostic"))
 keymap.set("n", "<leader>r", function()
   require("ken.hsl").replaceHexWithHSL()
-end)
-
+end, with_desc(opts, "replace hex to hsl"))
 keymap.set("n", "<leader>i", function()
   require("ken.lsp").toggleInlayHints()
-end)
+end, with_desc(opts, "toggle inlay hints"))
