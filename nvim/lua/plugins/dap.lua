@@ -13,67 +13,8 @@ return {
       },
     },
 
-  -- stylua: ignore
-  keys = {
-    { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
-    { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
-    { "<leader>dc", function() require("dap").continue() end, desc = "Run/Continue" },
-    { "<leader>da", function() require("dap").continue({ before = get_args }) end, desc = "Run with Args" },
-    { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
-    { "<leader>dg", function() require("dap").goto_() end, desc = "Go to Line (No Execute)" },
-    { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
-    { "<leader>dj", function() require("dap").down() end, desc = "Down" },
-    { "<leader>dk", function() require("dap").up() end, desc = "Up" },
-    { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
-    { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
-    { "<leader>dO", function() require("dap").step_over() end, desc = "Step Over" },
-    { "<leader>dP", function() require("dap").pause() end, desc = "Pause" },
-    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
-    { "<leader>ds", function() require("dap").session() end, desc = "Session" },
-    { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
-    { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
-  },
-
     config = function()
-      -- Configure the DAP settings for Dart/Flutter
-      require("dap").adapters.dart = {
-        type = "executable",
-        command = "dart", -- if you're using fvm, you'll need to provide the full path to dart (dart.exe for windows users), or you could prepend the fvm command
-        args = { "debug_adapter" },
-        -- windows users will need to set 'detached' to false
-        options = {
-          detached = false,
-        },
-      }
-      -- require("dap").adapters.flutter = {
-      --   type = "executable",
-      --   command = "flutter", -- if you're using fvm, you'll need to provide the full path to flutter (flutter.bat for windows users), or you could prepend the fvm command
-      --   args = { "debug_adapter" },
-      --   -- windows users will need to set 'detached' to false
-      --   options = {
-      --     detached = false,
-      --   },
-      -- }
-      -- require("dap").configurations.dart = {
-      --   {
-      --     type = "dart",
-      --     request = "launch",
-      --     name = "Launch dart",
-      --     dartSdkPath = "/Users/quocanh/development/flutter/bin/dart", -- ensure this is correct
-      --     flutterSdkPath = "/Users/quocanh/development/flutter/bin/flutter", -- ensure this is correct
-      --     program = "${workspaceFolder}/lib/main.dart", -- ensure this is correct
-      --     cwd = "${workspaceFolder}",
-      --   },
-      --   {
-      --     type = "flutter",
-      --     request = "launch",
-      --     name = "Launch flutter",
-      --     dartSdkPath = "/Users/quocanh/development/flutter/bin/dart", -- ensure this is correct
-      --     flutterSdkPath = "/Users/quocanh/development/flutter/bin/flutter", -- ensure this is correct
-      --     program = "${workspaceFolder}/lib/main.dart", -- ensure this is correct
-      --     cwd = "${workspaceFolder}",
-      --   },
-      -- }
+      local dap = require("dap")
 
       -- load mason-nvim-dap here, after all adapters have been setup
       if LazyVim.has("mason-nvim-dap.nvim") then
@@ -90,12 +31,40 @@ return {
         )
       end
 
-      -- setup dap config by VsCode launch.json file
-      local vscode = require("dap.ext.vscode")
-      local json = require("plenary.json")
-      vscode.json_decode = function(str)
-        return vim.json.decode(json.json_strip_comments(str))
-      end
+      -- Configure the DAP settings for Dart/Flutter
+      dap.configurations.dart = {
+        {
+          type = "dart",
+          request = "launch",
+          name = "Launch dart",
+          program = "${file}", -- ensure this is correct
+          cwd = "${workspaceFolder}",
+        },
+        {
+          type = "flutter",
+          request = "launch",
+          name = "Launch flutter",
+          program = "${workspaceFolder}/lib/main.dart", -- ensure this is correct
+          cwd = "${workspaceFolder}",
+        },
+      }
+
+      dap.adapters.dart = {
+        type = "executable",
+        command = "dart",
+        args = { "debug_adapter" },
+      }
+
+      dap.adapters.flutter = {
+        type = "executable",
+        command = "flutter", -- if you're using fvm, you'll need to provide the full path to flutter (flutter.bat for windows users), or you could prepend the fvm command
+        args = { "debug_adapter" },
+        toolArgs = { "--device-id", "FC1891B0-A121-4CA0-B1CB-70BF92DCD271" },
+        -- windows users will need to set 'detached' to false
+        options = {
+          detached = false,
+        },
+      }
     end,
   },
 }
