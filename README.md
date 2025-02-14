@@ -8,6 +8,7 @@
 - fish config
 - iterm2 config
 - zsh config
+- Warp dev
 
 ## How to Use
 
@@ -76,9 +77,13 @@
 
 - [Cheat Sheet](https://github.com/0nn0/terminal-mac-cheatsheet)
 - List: `ls`, `ll`
+
 - Default
+
   - `c`: clear
+
 - Fzf
+
   - Type `fzf` or press `<C-t>`: get a list of files and directories
     - `<C-c`: quit mode
     - `<C-j>` or `<C-k`: move down / up
@@ -87,6 +92,7 @@
   - `COMMAND [DIRECTORY/][FUZZY_PATTERN]**<Tab>`
   - `<C-r`: paste the selected command from history onto the command-line
   - `<ALT-c>`: get a list of directories
+
 - Zoxide
 
   - Use `z` to move
@@ -99,8 +105,6 @@
 - Cheat sheet
 
   - https://github.com/VSCodeVim/Vim/blob/master/ROADMAP.md
-  - https://vim.rtorr.com/
-  - https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/cheatsheet
 
 - Default
 
@@ -118,6 +122,16 @@
   - `C-n`: clear search highlight
   - `<leader>p`: format
   - `<C-z>`: toggle zen mode
+
+- VIM Surround
+
+  - `ds`: delete surroundings e.g. ds"
+  - `cs`: change surroundings e.g. cs\*tem>
+  - `ys`: add surroundings e.g. ysiw"
+  - `ds"`: delete surrounding quotes
+  - `cs*tem>`: change surrounding \* for the <em> tag
+  - `ysiw"`: surround word under the cursor with quotes
+  - `S`: In visual mode you can select some text, then type S to add surroundings. e.g. Stp> to wrap the selection in a <p> tag
 
 - LSP
 
@@ -165,68 +179,24 @@
 
 - [Cheat Sheet](https://tmuxcheatsheet.com/)
 - Prefix: `<C-t>`
+
   - `r`: reload
   - `o`: open folder in finder
   - `e`: close all panes but current
   - `h j k l`: pane switching like vim
   - `<C-k>`, `<C-j>`, `<C-h>`, `<C-l>`: resize pane
   - `g`: open lazygit
+
 - Moving window (swap): `<C-S-Left>`, `<C-S-Right>`
 
 ### Nvim
 
 - [Cheat Sheet](https://vim.rtorr.com/)
-- [LazyVim keymaps](https://www.lazyvim.org/keymaps)
-- Default keymaps
-  - `:Noice`: check the error message
-  - `jk`: quit insert mode
-  - `+`,`-`: increment, decrement
-  - `dw`: delete a word backwards
-  - `<C-a>`: select all
-  - `<C-m>`, `<C-o>`, or use `[` , `]`: move backwards/forwards (jump list)
-  - `<leader>d`, `<leader>c`, `<leader>p`: save and get from new yarn
-  - `<leader>r`: replace hex color to hsl
-  - `z+some-key`: fold code
-  - `<leader>m`: start multiple cursor mode
-  - Tab
-    - `te`: open new tab
-    - `<Tab>`: tab next
-    - `<S-Tab>`: tab back
-  - Window
-    - `ss`: horizontal split
-    - `sv`: vertical split
-    - `sh`, `sk`, `sj`, `sl`: move window
-    - `<C-w><left>`, `<C-w><right>`, `<C-w><up>`, `<C-w><down>`: resize window
-  - Diagnostic
-    - `<C-j>`>: go to next
-- Telescope
-  - `<leader>fP`: find plugin file
-  - `;f`: lists files in your current working directory, respects .gitignore
-  - `;r`: search for a string in your current working directory and get results live as you type, respects .gitignore
-  - `\\\\`: lists open buffers
-  - `;t`: lists available help tags and opens a new window with the relevant help info on <cr>
-  - `;;`: resume the previous telescope picker
-  - `;e`: lists Diagnostics for all open buffers or a specific buffer
-  - `;s`: lists Function names, variables, from Treesitter
-  - `sf`: open file browser with the path of the current buffer
-    - normal mode
-      - `N`: create file/folder
-      - `h`: go to parent directory
-      - `/`: start to search
-      - `<C-u>`, `<C-d>`: move selection
-      - `<PageUp>`, `<PageDown>`: preview scroll
-- Neogen Comment: `<leader>cc`
-- Refactoring: `<leader>r` - visual mode
-- Symbols outline: `<leader>cs`
-- Completion
-  - `<C-space>`: show completion
-  - `<C-b>`, `<C-f>`: scroll docs
-  - `<C-e>`: abort
-  - `<CR>`: confirm
-- LSP
-  - `<leader>i`: toggle inlay hints
-- Git
-  - `<leader>gb`: open blame window
-  - `<leader>go`: open file/folder in git repo
-  - `<leader>lg`: open lazygit
-- Zen mode: `<leader>z`
+- [LazyVim keymaps](https://www.lazyvim.org/)
+
+- Commands
+
+  - `WhichKey`: show key maps
+  - `Noice`: show the system error message
+
+- [Search and Replace](https://www.baeldung.com/linux/vim-search-replace)
