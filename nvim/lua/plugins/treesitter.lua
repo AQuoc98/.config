@@ -21,6 +21,7 @@ return {
         "sql",
         "svelte",
         "dart",
+        "angular",
       },
 
       -- matchup = {

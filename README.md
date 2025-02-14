@@ -100,6 +100,32 @@
 
 - Lazygit: `lg`
 
+### Tmux
+
+- [Cheat Sheet](https://tmuxcheatsheet.com/)
+- Prefix: `<C-t>`
+
+  - `r`: reload
+  - `o`: open folder in finder
+  - `e`: close all panes but current
+  - `h j k l`: pane switching like vim
+  - `<C-k>`, `<C-j>`, `<C-h>`, `<C-l>`: resize pane
+  - `g`: open lazygit
+
+- Moving window (swap): `<C-S-Left>`, `<C-S-Right>`
+
+### Nvim
+
+- [Cheat Sheet](https://vim.rtorr.com/)
+- [LazyVim keymaps](https://www.lazyvim.org/)
+
+- Commands
+
+  - `WhichKey`: show key maps
+  - `Noice`: show the system error message
+
+- [Search and Replace](https://www.baeldung.com/linux/vim-search-replace)
+
 ### VIM in VSCODE
 
 - Cheat sheet
@@ -174,29 +200,3 @@
   - `<C-S-k>`: focus previous terminal
   - `<C-S-n>`: new terminal
   - `<C-S-w>`: kill terminal
-
-### Tmux
-
-- [Cheat Sheet](https://tmuxcheatsheet.com/)
-- Prefix: `<C-t>`
-
-  - `r`: reload
-  - `o`: open folder in finder
-  - `e`: close all panes but current
-  - `h j k l`: pane switching like vim
-  - `<C-k>`, `<C-j>`, `<C-h>`, `<C-l>`: resize pane
-  - `g`: open lazygit
-
-- Moving window (swap): `<C-S-Left>`, `<C-S-Right>`
-
-### Nvim
-
-- [Cheat Sheet](https://vim.rtorr.com/)
-- [LazyVim keymaps](https://www.lazyvim.org/)
-
-- Commands
-
-  - `WhichKey`: show key maps
-  - `Noice`: show the system error message
-
-- [Search and Replace](https://www.baeldung.com/linux/vim-search-replace)

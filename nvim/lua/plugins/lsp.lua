@@ -13,6 +13,7 @@ return {
         "typescript-language-server",
         "css-lsp",
         "ast-grep",
+        "angular-language-server",
       })
     end,
   },
@@ -30,6 +31,17 @@ return {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
           end,
+        },
+        angularls = {
+          root_dir = require("lspconfig").util.root_pattern("angular.json", "project.json"),
+          settings = {
+            angular = {
+              suggest = {
+                autoImports = true,
+                inlineTemplates = true,
+              },
+            },
+          },
         },
         tsserver = {
           root_dir = function(...)
