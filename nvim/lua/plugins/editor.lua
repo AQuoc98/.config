@@ -45,19 +45,6 @@ return {
   },
 
   {
-    "dinhhuy258/git.nvim",
-    event = "BufReadPre",
-    opts = {
-      keymaps = {
-        -- Open blame window
-        blame = "<Leader>gb",
-        -- Open file/folder in git repository
-        browse = "<Leader>go",
-      },
-    },
-  },
-
-  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       {
@@ -71,6 +58,13 @@ return {
         -- For major updates, this must be adjusted manually.
         version = "^1.0.0",
       },
+      {
+            "isak102/telescope-git-file-history.nvim",
+            dependencies = {
+                "nvim-lua/plenary.nvim",
+                "tpope/vim-fugitive"
+            }
+        }
     },
     keys = {
       {
@@ -109,6 +103,15 @@ return {
           local telescope = require("telescope")
 
           telescope.extensions.live_grep_args.live_grep_args()
+        end,
+        desc = "Search with args",
+      },
+            {
+        ";g",
+        function()
+          local telescope = require("telescope")
+
+          telescope.extensions.git_file_history.git_file_history()
         end,
         desc = "Search with args",
       },
@@ -243,6 +246,7 @@ return {
       require("telescope").load_extension("file_browser")
       require("telescope").load_extension("live_grep_args")
       require("telescope").load_extension("flutter")
+      require("telescope").load_extension("git_file_history")
     end,
   },
 

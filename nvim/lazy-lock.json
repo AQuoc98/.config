@@ -12,7 +12,6 @@
   "flutter-tools.nvim": { "branch": "main", "commit": "b2ec4e0e1cc8df188c9ae9d4a0332acb020508dd" },
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
   "fzf-lua": { "branch": "main", "commit": "8633175d4e74cd6013f75af7682c7e8ac133056a" },
-  "git.nvim": { "branch": "main", "commit": "164daed4eff61bd6bee6f1c97cb78144b9374022" },
   "gitsigns.nvim": { "branch": "main", "commit": "2bc3b472bbc2484214549af4d9f38c127b886a55" },
   "grug-far.nvim": { "branch": "main", "commit": "3a8690461afac34c0e5bacb0f7b4bc3066aab665" },
   "hydra.nvim": { "branch": "main", "commit": "983852960cd4e4e9a1b272df0bd1447495aae755" },
@@ -56,12 +55,14 @@
   "symbols-outline.nvim": { "branch": "master", "commit": "564ee65dfc9024bdde73a6621820866987cbb256" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "626998e5c1b71c130d8bc6cf7abb6709b98287bb" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "2a5ceff981501cff8f46871d5402cd3378a8ab6a" },
+  "telescope-git-file-history.nvim": { "branch": "master", "commit": "c27d99ba88ec5f0b6d2b9f9bc67dd3d14c610b25" },
   "telescope-live-grep-args.nvim": { "branch": "master", "commit": "8ad632f793fd437865f99af5684f78300dac93fb" },
   "telescope.nvim": { "branch": "master", "commit": "78857db9e8d819d3cc1a9a7bdc1d39d127a36495" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
   "tokyonight.nvim": { "branch": "main", "commit": "84ea0b5f4651afdf50ececaf6f110fe9d9dc9458" },
   "trouble.nvim": { "branch": "main", "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3" },
   "ts-comments.nvim": { "branch": "main", "commit": "872dcfa0418f4a33b7437fb4d9f4e89f2f000d74" },
+  "vim-fugitive": { "branch": "master", "commit": "b068eaf1e6cbe35d1ac100d435cd7f7b74a5c87d" },
   "which-key.nvim": { "branch": "main", "commit": "0e76a87ac51772569aec678dc74baa8e2a86100c" },
   "zen-mode.nvim": { "branch": "main", "commit": "863f150ca321b3dd8aa1a2b69b5f411a220e144f" }
 }
