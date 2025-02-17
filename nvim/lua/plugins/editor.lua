@@ -59,12 +59,12 @@ return {
         version = "^1.0.0",
       },
       {
-            "isak102/telescope-git-file-history.nvim",
-            dependencies = {
-                "nvim-lua/plenary.nvim",
-                "tpope/vim-fugitive"
-            }
-        }
+        "isak102/telescope-git-file-history.nvim",
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+          "tpope/vim-fugitive",
+        },
+      },
     },
     keys = {
       {
@@ -106,7 +106,7 @@ return {
         end,
         desc = "Search with args",
       },
-            {
+      {
         ";g",
         function()
           local telescope = require("telescope")
@@ -131,14 +131,14 @@ return {
         end,
         desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
       },
-      {
-        ";;",
-        function()
-          local builtin = require("telescope.builtin")
-          builtin.resume()
-        end,
-        desc = "Resume the previous telescope picker",
-      },
+      -- {
+      --   ";;",
+      --   function()
+      --     local builtin = require("telescope.builtin")
+      --     builtin.resume()
+      --   end,
+      --   desc = "Resume the previous telescope picker",
+      -- },
       {
         ";e",
         function()
