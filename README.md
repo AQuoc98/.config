@@ -1,23 +1,22 @@
 # Ken's dotfiles
 
-## Contents
+## Config for ...
 
-- vim (Neovim) config
-- tmux config
-- git config
-- fish config
-- iterm2 config
-- zsh config
-- Warp dev
+- Vim - Neovim
+- Tmux
+- Fish
+- Iterm2
+- zsh
+- Warp
+- Ghostty
+- Yazi
 
-## How to Use
+## How to setup and use
 
 1. Clone repo to .config folder in your mac
 2. Install tmux, nvim, git, fish, ... by brew
 
-## Neovim setup
-
-### Requirements
+### Neovim
 
 - Brew
 - Neovim >= **0.9.0** (needs to be built with **LuaJIT**)
@@ -33,7 +32,7 @@
   - [iterm2](https://iterm2.com/) **_(Macos)_**
 - [Solarized Osaka](https://github.com/craftzdog/solarized-osaka.nvim)
 
-## Shell setup (macOS & Linux)
+### Shell
 
 - [Fish shell](https://fishshell.com/)
 - [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
@@ -45,7 +44,7 @@
 - [fzf](https://github.com/PatrickF1/fzf.fish) - Interactive filtering
 - [nvm](https://github.com/jorgebucaran/nvm.fish) - Nvm for fish
 
-## ZSH setup
+### ZSH
 
 - CLI
   - zsh-autosuggestions
