@@ -1,6 +1,4 @@
-# Ken's dotfiles
-
-## Config for ...
+# Config for ...
 
 - Vim - Neovim
 - Tmux
@@ -11,12 +9,12 @@
 - Ghostty
 - Yazi
 
-## How to setup and use
+# How to setup and use
 
 1. Clone repo to .config folder in your mac
 2. Install tmux, nvim, git, fish, ... by brew
 
-### Neovim
+## Neovim
 
 - Brew
 - Neovim >= **0.9.0** (needs to be built with **LuaJIT**)
@@ -32,7 +30,7 @@
   - [iterm2](https://iterm2.com/) **_(Macos)_**
 - [Solarized Osaka](https://github.com/craftzdog/solarized-osaka.nvim)
 
-### Shell
+## Shell
 
 - [Fish shell](https://fishshell.com/)
 - [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
@@ -44,7 +42,7 @@
 - [fzf](https://github.com/PatrickF1/fzf.fish) - Interactive filtering
 - [nvm](https://github.com/jorgebucaran/nvm.fish) - Nvm for fish
 
-### ZSH
+## ZSH
 
 - CLI
   - zsh-autosuggestions
@@ -56,9 +54,9 @@
   - zoxide
 - Prompt: starship
 
-## Command
+# Command & Keyboard Shortcut
 
-### Shell
+## Shell
 
 - Fish reload config: `source path-to-config.fish`
 - List: `ls`, `la`, `ll`, `lla`
@@ -72,7 +70,7 @@
   - `history clear`: clear search history
 - [Z usage](https://github.com/jethrokuan/z/blob/master/man/man1/z.md)
 
-### Terminal - zsh
+## Terminal - zsh
 
 - [Cheat Sheet](https://github.com/0nn0/terminal-mac-cheatsheet)
 - List: `ls`, `ll`
@@ -99,10 +97,10 @@
 
 - Lazygit: `lg`
 
-### Tmux
+## Tmux
 
 - [Cheat Sheet](https://tmuxcheatsheet.com/)
-- Prefix: `<C-t>`
+- Prefix: `<C-a>`
 
   - `r`: reload
   - `o`: open folder in finder
@@ -113,7 +111,7 @@
 
 - Moving window (swap): `<C-S-Left>`, `<C-S-Right>`
 
-### Nvim
+## Nvim
 
 - [Cheat Sheet](https://vim.rtorr.com/)
 - [LazyVim keymaps](https://www.lazyvim.org/)
@@ -125,7 +123,7 @@
 
 - [Search and Replace](https://www.baeldung.com/linux/vim-search-replace)
 
-### VIM in VSCODE
+## VIM in VSCODE
 
 - Cheat sheet
 
