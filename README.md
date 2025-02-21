@@ -12,7 +12,7 @@
 # How to setup and use
 
 1. Clone repo to .config folder in your mac
-2. Install tmux, nvim, git, fish, ... by brew
+2. Install node, tmux, nvim, git, fish, ... by brew
 
 ## Neovim
 
@@ -53,6 +53,10 @@
   - eza
   - zoxide
 - Prompt: starship
+
+## Tmux
+
+- [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
 # Command & Keyboard Shortcut
 
