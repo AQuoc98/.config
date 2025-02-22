@@ -19,16 +19,14 @@
 - Brew
 - Neovim >= **0.9.0** (needs to be built with **LuaJIT**)
 - Git >= **2.19.0** (for partial clones support)
+- Node
 - [LazyVim](https://www.lazyvim.org/)
 - a [Nerd Font](https://www.nerdfonts.com/)(v3.0 or greater) **_(optional, but needed to display some icons)_**
+  - I use blex-mono-nerd-font
 - [lazygit](https://github.com/jesseduffield/lazygit) **_(optional)_**
-- a **C** compiler for `nvim-treesitter`. See [here](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
 - for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) **_(optional)_**
   - **live grep**: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - **find files**: [fd](https://github.com/sharkdp/fd)
-- a terminal that support true color and *undercurl*:
-  - [iterm2](https://iterm2.com/) **_(Macos)_**
-- [Solarized Osaka](https://github.com/craftzdog/solarized-osaka.nvim)
 
 ## Shell
 
@@ -56,17 +54,25 @@
 
 ## Tmux
 
+- `brew install tmux`
 - [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+
+## Yazi
+
+- [Tutorials](https://www.youtube.com/watch?v=iKb3cHDD9hw)
+- [Guide](https://yazi-rs.github.io/)
 
 # Command & Keyboard Shortcut
 
 ## Shell
 
 - Fish reload config: `source path-to-config.fish`
+- Set fish as your default shell: `chsh -s $(which fish)`
 - List: `ls`, `la`, `ll`, `lla`
 - Git: `g`
 - Nvim: `v`
-- Lazygit: `lazygit`
+- Lazygit: `lg`
+- Ollama: `ol`
 - Fzf
   - `<C-f>`: fzf change directory
   - `<C-o>`: open fzf
@@ -124,6 +130,7 @@
 
   - `WhichKey`: show key maps
   - `Noice`: show the system error message
+  - `Gen`: Call prompt local AI
 
 - [Search and Replace](https://www.baeldung.com/linux/vim-search-replace)
 
