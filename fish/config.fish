@@ -16,14 +16,9 @@ alias ll "ls -l"
 alias lla "ll -A"
 alias g git
 alias v nvim
-alias ol ollama
+# alias ol ollama
 alias c clear
-
-set -gx EDITOR nvim
-
-set -gx PATH bin $PATH
-set -gx PATH ~/bin $PATH
-set -gx PATH ~/.local/bin $PATH
+alias lg lazygit
 
 # Brew
 eval (/opt/homebrew/bin/brew shellenv)
@@ -32,26 +27,19 @@ set -gx HOMEBREW_NO_AUTO_UPDATE 1
 # NVM
 set --universal nvm_default_version latest
 
-# Flutter
-set -gx PATH ~/development/flutter/bin/ $PATH
+# # Flutter
+# set -gx PATH ~/development/flutter/bin/ $PATH
 
-# Dart
-set -gx PATH /Users/quocanh/development/flutter/bin/dart $PATH
+# # Dart
+# set -gx PATH /Users/quocanh/development/flutter/bin/dart $PATH
 
-# Ruby version manager rbenv
-eval "$(rbenv init -)"
+# # Ruby version manager rbenv
+# eval "$(rbenv init -)"
 
 switch (uname)
-    case Darwin
-        source (dirname (status --current-filename))/config-osx.fish
-    case Linux
-        source (dirname (status --current-filename))/config-linux.fish
+     case Darwin
+         source (dirname (status --current-filename))/config-osx.fish
+     case Linux
+         source (dirname (status --current-filename))/config-linux.fish
 end
 
-set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
-if test -f $LOCAL_CONFIG
-    source $LOCAL_CONFIG
-end
-
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH /Users/quocanh/.lmstudio/bin
