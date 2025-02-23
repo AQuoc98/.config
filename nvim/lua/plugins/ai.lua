@@ -1,9 +1,8 @@
 return {
-
   {
     "David-Kunz/gen.nvim",
     opts = {
-      model = "llama3.2:latest", -- The default model to use.
+      model = "deepseek-r1:14b", -- The default model to use.
       quit_map = "q", -- set keymap to close the response window
       retry_map = "<c-r>", -- set keymap to re-send the current prompt
       accept_map = "<c-cr>", -- set keymap to replace the previous selection with the last result
@@ -36,53 +35,74 @@ return {
       debug = false, -- Prints errors and the command which is run.
 
       prompts = {
-        Review_Code = {
-          prompt = "Review the following code and make concise suggestions:\n```$filetype\n$text\n```",
+        Generate_Code = {
+          prompt = "Based on the following description, generate the appropriate code:\n\nDescription: $input\n\nExisting context:\n```$filetype\n$text\n```",
           replace = false,
           model = "qwen2.5-coder:14b",
         },
-        Generate_Code = {
-          prompt = "Help me generate this code",
-          replace = true,
+        Review_Code = {
+          prompt = "Analyze the following code and provide clear, concise improvement suggestions:\n```$filetype\n$text\n```\nFocus on efficiency, readability, and best practices.",
+          replace = false,
           model = "qwen2.5-coder:14b",
         },
-        Generate = { prompt = "$input", replace = true },
-        Chat = { prompt = "$input" },
-        Summarize = { prompt = "Summarize the following text:\n$text" },
-        Ask = { prompt = "Regarding the following text, $input:\n$text" },
+        Generate = {
+          prompt = "Generate a response based on the following input:\n$input",
+          replace = false,
+        },
+        Chat = {
+          prompt = "You are an intelligent assistant. Respond naturally to the following message:\n$input",
+        },
+        Summarize = {
+          prompt = "Provide a clear and concise summary of the following text:\n$text",
+        },
+        Ask = {
+          prompt = "Answer the following query based on the given context:\n\nQuery: $input\n\nContext:\n$text",
+        },
         Change = {
-          prompt = "Change the following text, $input, just output the final text without additional quotes around it:\n$text",
-          replace = true,
+          prompt = "Modify the following text based on this instruction: $input\n\nText:\n$text\n\nOutput the final modified text without additional formatting.",
+          replace = false,
         },
         Enhance_Grammar_Spelling = {
-          prompt = "Modify the following text to improve grammar and spelling, just output the final text without additional quotes around it:\n$text",
-          replace = true,
+          prompt = "Improve the grammar and spelling of the following text. Only return the corrected text without additional formatting:\n$text",
+          replace = false,
         },
         Enhance_Wording = {
-          prompt = "Modify the following text to use better wording, just output the final text without additional quotes around it:\n$text",
-          replace = true,
+          prompt = "Refine the following text for better clarity and readability. Only return the improved text without extra formatting:\n$text",
+          replace = false,
         },
         Make_Concise = {
-          prompt = "Modify the following text to make it as simple and concise as possible, just output the final text without additional quotes around it:\n$text",
-          replace = true,
+          prompt = "Rewrite the following text to be as simple and concise as possible while retaining meaning. Only return the revised text:\n$text",
+          replace = false,
         },
         Make_List = {
-          prompt = "Render the following text as a markdown list:\n$text",
-          replace = true,
+          prompt = "Convert the following text into a well-structured Markdown list:\n$text",
+          replace = false,
         },
         Make_Table = {
-          prompt = "Render the following text as a markdown table:\n$text",
-          replace = true,
+          prompt = "Convert the following text into a properly formatted Markdown table:\n$text",
+          replace = false,
         },
         Enhance_Code = {
-          prompt = "Enhance the following code, only output the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
-          replace = true,
+          prompt = "Optimize and improve the following code. Focus on efficiency, readability, and best practices. Return only the updated code in the format:\n```$filetype\n...\n```\n\n```$filetype\n$text\n```",
+          replace = false,
           extract = "```$filetype\n(.-)```",
+          model = "qwen2.5-coder:14b",
         },
         Change_Code = {
-          prompt = "Regarding the following code, $input, only output the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
-          replace = true,
+          prompt = "Modify the following code according to this instruction: $input\n\nCode:\n```$filetype\n$text\n```\n\nReturn only the modified code in the format:\n```$filetype\n...\n```",
+          replace = false,
           extract = "```$filetype\n(.-)```",
+          model = "qwen2.5-coder:14b",
+        },
+        Translate = {
+          prompt = "Please translate the following passage:\n$text\n from $input for me. Kindly provide several different versions of the translation. You must need to return the translated text with correct grammar and appropriate vocabulary",
+          replace = false,
+          model = "deepseek-r1:14b",
+        },
+        Write_Novel = {
+          prompt = "Please help me write a novel or story based on the $input. Using the following context:$text. Please begin or continue to describe this story in an engaging way that captivates readers and has logical, cohesive content",
+          replace = false,
+          model = "llava:13b",
         },
       },
     },
