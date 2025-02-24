@@ -37,11 +37,13 @@ set -gx HOMEBREW_NO_AUTO_UPDATE 1
 # NVM
 set --universal nvm_default_version latest
 
-# # Flutter
-set -gx PATH ~/development/flutter/bin/ $PATH
+# Flutter
+set -g FLUTTERPATH $HOME/development/flutter
+set -gx PATH $FLUTTERPATH/bin $PATH
 
 # Dart
-set -gx PATH ~/development/flutter/bin/dart $PATH
+set -g DARTPATH $HOME/development/flutter
+set -gx PATH $DARTPATH/bin/dart $PATH
 
 # Ruby version manager rbenv
 eval "$(rbenv init -)"
