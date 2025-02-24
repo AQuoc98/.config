@@ -134,6 +134,10 @@
 
 - [Search and Replace](https://www.baeldung.com/linux/vim-search-replace)
 
+## Yazi
+
+- `y`: open yazi
+
 ## VIM in VSCODE
 
 - Cheat sheet
