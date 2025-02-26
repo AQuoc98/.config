@@ -43,6 +43,14 @@ set --universal nvm_default_version latest
 set -g FLUTTERPATH $HOME/development/flutter
 set -gx PATH $FLUTTERPATH/bin $PATH
 
+function flutter-watch
+    tmux send-keys "flutter run $argv[1] $argv[2] $argv[3] $argv[4] --pid-file=/tmp/tf1.pid" Enter
+    tmux split-window -v
+    tmux send-keys 'npx -y nodemon -e dart -x "cat /tmp/tf1.pid | xargs kill -s USR1"' Enter
+    tmux resize-pane -y 5 -t 1
+    tmux select-pane -t 0
+end
+
 # Dart
 set -g DARTPATH $HOME/development/flutter
 set -gx PATH $DARTPATH/bin/dart $PATH
