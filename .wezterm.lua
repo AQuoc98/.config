@@ -11,7 +11,7 @@ config.animation_fps = 1
 config.max_fps = 120
 
 config.font = wezterm.font("BlexMono Nerd Font Mono")
-config.font_size = 14
+config.font_size = 12
 
 config.hide_tab_bar_if_only_one_tab = true
 config.enable_tab_bar = false
