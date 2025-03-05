@@ -41,17 +41,18 @@
 - [nvm](https://github.com/jorgebucaran/nvm.fish) - Nvm for fish
 
 ## ZSH
-
+- Oh My ZSH
 - CLI
-  - zsh-autosuggestions
-  - zsh-syntax-highlighting
-  - fzf
-  - fd
-  - bat
-  - eza
-  - zoxide
-- Prompt: starship
-
+  - zsh-autosuggestions (installed by Oh My ZSH)
+  - zsh-syntax-highlighting (installed by Oh My ZSH)
+  - fzf (installed by brew)
+  - fd (installed by brew)
+  - bat (installed by brew)
+  - eza (installed by brew)
+  - zoxide (installed by brew)
+- Theme
+  - powerlevel10k
+  
 ## Tmux
 
 - `brew install tmux`
@@ -83,11 +84,13 @@
 ## Terminal - zsh
 
 - [Cheat Sheet](https://github.com/0nn0/terminal-mac-cheatsheet)
-- List: `ls`, `ll`
 
 - Default
 
   - `c`: clear
+  - `ls`, `ll`: list
+  - `lg`: lazygit
+  - `bat file-name`: preview file
 
 - Fzf
 
@@ -105,7 +108,6 @@
   - Use `z` to move
   - `z <Tab>`: show different possible directories
 
-- Lazygit: `lg`
 
 ## Tmux
 
