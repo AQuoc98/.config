@@ -10,20 +10,18 @@ $golang\
 $rust\
 $ruby\
 $aws\
-$dart\
 $docker_context\
 $jobs\
 $cmd_duration\
 $line_break\
-$character
-"""
+$character"""
 
 add_newline = true
 
 [directory]
 style = 'bold fg:dark_blue'
 format = '[$path ]($style)'
-truncation_length = 10
+truncation_length = 3
 truncation_symbol = '…/'
 truncate_to_repo = false
 
@@ -34,54 +32,49 @@ truncate_to_repo = false
 'Pictures' = ' '
 
 [git_branch]
-symbol = ' '
 style = 'fg:green'
-# format = '[on](white) [$symbol$branch ]($style)'
+symbol = ' '
+format = '[on](white) [$symbol$branch ]($style)'
 
 [git_status]
 style = 'fg:red'
-format = '([\[$all_status$ahead_behind\]]($style) )'
+format = '([$all_status$ahead_behind]($style) )'
 
 [fill]
 symbol = ' '
 
 [python]
-symbol = ' '
 style = 'teal'
+symbol = ' '
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 pyenv_version_name = true
 pyenv_prefix = ''
 
 [lua]
-symbol = ' '
 format = '[$symbol($version )]($style)'
+symbol = ' '
 
 [nodejs]
+style = 'blue'
 symbol = ' '
-style = 'green'
 
 [golang]
-symbol = ' '
 style = 'blue'
+symbol = ' '
 
 [rust]
-symbol = "󱘗 "
 style = 'orange'
+symbol = ' '
 
 [ruby]
-symbol = ' '
-style = 'red'
-
-[dart]
-symbol = " "
-format = '[$symbol($version )]($style)'
 style = 'blue'
+symbol = ' '
 
 [package]
 symbol = '󰏗 '
 
 [aws]
-symbol = "  "
+symbol = ' '
 style = 'yellow'
 format = '[$symbol($profile )(\[$duration\] )]($style)'
 

@@ -1,6 +1,8 @@
 /configstore
 /flutter
-/iterm2
+/nx
+/raycast
 /github-copilot
+/thefuck
 .DS_Store
 .vscode
