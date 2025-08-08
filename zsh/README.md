@@ -5,15 +5,25 @@
 # CLI tools
 
 - zsh-syntax-highlighting
+
 - zsh-autosuggestions
+
 - fzf
+
 - fzf-git
+
 - fd
+
 - bat
+
 - delta
+
 - eza
+
 - thefuck
+
 - zoxide
+
 - lazygit
 
 # Shortcut
