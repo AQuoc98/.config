@@ -5,6 +5,13 @@ vim.g.maplocalleader = ' '
 -- For conciseness
 local opts = { noremap = true, silent = true }
 
+-- Increment/decrement
+vim.keymap.set('n', '+', '<C-a>')
+vim.keymap.set('n', '-', '<C-x>')
+
+-- Select all
+vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
+
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 

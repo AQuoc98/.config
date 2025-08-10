@@ -108,3 +108,7 @@
 - [Lazyvim](https://www.lazyvim.org/keymaps)
 
 - [Vim cheat sheet](https://vim.rtorr.com/)
+
+- [Neovim document](https://neovim.io/doc/)
+
+- Relative line number: `number + j | k`

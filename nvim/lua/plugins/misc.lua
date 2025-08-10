@@ -30,4 +30,16 @@ return {
       require('colorizer').setup()
     end,
   },
+  {
+    -- Multiple cursors for Neovim
+    'mg979/vim-visual-multi',
+    branch = 'master',
+    init = function()
+      -- Custom keymaps for vim-visual-multi
+      vim.g.VM_maps = {
+        ['Add Cursor Down'] = '<A-j>', -- Alt + j
+        ['Add Cursor Up'] = '<A-k>', -- Alt + k
+      }
+    end,
+  },
 }
