@@ -79,14 +79,14 @@ return {
       -- ---------- Adapters (Copilot default + GitHub Models)
       local copilot = function()
         return adapters.extend('copilot', {
-          schema = { model = { default = 'gpt-4o-mini' } },
+          schema = { model = { default = 'gpt-4.1' } },
           opts = { stream = true },
         })
       end
 
       local ghmodels = function()
         return adapters.extend('githubmodels', {
-          schema = { model = { default = 'openai/gpt-4o-mini' } },
+          schema = { model = { default = 'openai/gpt-4.1' } },
           opts = { stream = true },
         })
       end
@@ -110,7 +110,7 @@ return {
         -- ---------- Strategies
         strategies = {
           chat = {
-            adapter = { name = 'copilot', model = 'gpt-4o-mini' },
+            adapter = { name = 'copilot', model = 'gpt-4.1' },
             roles = {
               llm = function(adapter)
                 local name = adapter.formatted_name
@@ -226,7 +226,7 @@ return {
 
           -- Inline
           inline = {
-            adapter = { name = 'copilot', model = 'gpt-4o-mini' },
+            adapter = { name = 'copilot', model = 'gpt-4.1' },
             keymaps = {
               accept_change = { modes = { n = 'ga' }, description = 'Accept inline change' },
               reject_change = { modes = { n = 'gr' }, opts = { nowait = true }, description = 'Reject inline change' },
@@ -235,7 +235,7 @@ return {
 
           -- Agent
           agent = {
-            adapter = { name = 'copilot', model = 'gpt-4o-mini' },
+            adapter = { name = 'copilot', model = 'gpt-4.1' },
           },
         },
 
