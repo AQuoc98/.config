@@ -103,6 +103,8 @@
 - Inline
   - Select code → <leader>ai → enter instruction → accept (ga) or reject (gr) the patch.
 
+# [OPENCODE](https://opencode.ai/)
+
 # Shortcut
 
 - [Lazyvim](https://www.lazyvim.org/keymaps)
